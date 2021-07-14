@@ -1,0 +1,93 @@
+% ------------------------------------------------------------------------------
+%   Makra pro generování permutací
+%
+\def\switchletter#1:#2,#3,#4,#5,#6,#7;{\ifcase#1{#2}\or{#3}\or{#4}\or{#5}\or{#6}\or{#7}\fi
+}
+
+\def\permutation#1:#2;#3;#4;#5;#6;#7;{\ifcase#1
+\answerletter0:#2;#5;\answerletter1:#3;#6;\answerletter2:#4;#7;\or
+\answerletter0:#3;#6;\answerletter1:#4;#7;\answerletter2:#2;#5;\or
+\answerletter0:#4;#7;\answerletter1:#2;#5;\answerletter2:#3;#6;\or
+\answerletter0:#2;#5;\answerletter1:#4;#7;\answerletter2:#3;#6;\or
+\answerletter0:#3;#6;\answerletter1:#2;#5;\answerletter2:#4;#7;\or
+\answerletter0:#4;#7;\answerletter1:#3;#6;\answerletter2:#2;#5;\fi
+}
+
+\def\answerletter#1:#2;#3;{\ifcase#1
+\def\letterX{#2}\def\answerX{#3}\or
+\def\letterY{#2}\def\answerY{#3}\or
+\def\letterZ{#2}\def\answerZ{#3}\fi
+}
+
+
+% ------------------------------------------------------------------------------
+%   Fonty
+%
+% vrchní písmenko
+\font\topletterfont=csr17 at 250pt
+%~ \font\topletterfont=frummr17 at 250pt   % tohle bylo nějaký runový písmo, už neumim oživit
+
+% otázka
+\font\questionfont=csr17 at 28pt
+
+% odpovědní písmenko
+%~ \font\voteletterfont=frummr17 at 22pt   % tohle bylo nějaký runový písmo, už neumim oživit
+\font\voteletterfont=csr17 at 22pt
+
+% poznámka
+\font\notefont=csr17 at 20pt
+
+% cíl
+\font\finishfont=csr17 at 35pt
+
+% kompost
+\font\kompostfont=csr17 at 80pt
+
+
+% ------------------------------------------------------------------------------
+%   Formátování
+%
+\nopagenumbers
+\parindent=0pt
+
+
+% ------------------------------------------------------------------------------
+%   Otázka
+%
+\def\question#1->#2,#3,#4:#5:#6;#7;#8;#9;{
+    \permutation#5:\lettertable#2;\lettertable#3;\lettertable#4;#7;#8;#9;
+    % větší řádkování
+    \baselineskip=40pt
+    % vrchní písmenko
+    \centerline{\topletterfont\lettertable#1}
+    % mezera
+    \vskip2cm
+    % otázka (6. argument)
+    {\questionfont #6}
+    % mezera
+    \vskip1cm
+    % odpovědi
+    {\questionfont
+        \setbox0=\hbox{\voteletterfont\letterX} \line{\hskip1cm \hskip-.5\wd0 \copy0\hskip-.5\wd0\hskip.6cm-- \answerX\hfil}
+        \setbox0=\hbox{\voteletterfont\letterY} \line{\hskip1cm \hskip-.5\wd0 \copy0\hskip-.5\wd0\hskip.6cm-- \answerY\hfil}
+        \setbox0=\hbox{\voteletterfont\letterZ} \line{\hskip1cm \hskip-.5\wd0 \copy0\hskip-.5\wd0\hskip.6cm-- \answerZ\hfil}
+    }
+    % zápatí
+    \footing
+}
+
+
+% ------------------------------------------------------------------------------
+%   Zápatí
+%
+\def\footing{
+    \vfill
+    % větší řádkování
+    \baselineskip=30pt
+    \centerline{\notefont Dieses Papier wird zum Spielen des Labyrinths verwendet.}
+    \centerline{\notefont Bitte nehmen Sie es nicht weg. Wir werden es}
+    \centerline{\notefont bis zum 5.7.2020 selbst nehmen. (Credit: Google Translate.)}
+    % blíž spodnímu okraji
+    \vskip-2cm
+    \eject
+}
