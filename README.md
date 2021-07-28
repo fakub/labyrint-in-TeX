@@ -9,8 +9,13 @@ Skript původně od někoho z Fykosu, vlastní úpravy.
 Jak postupovat:
 
  1. uprav soubory `*.tex` dle libosti,
- 2. zkompiluj (plain TeX):
+ 2. zkompiluj (potřebuješ plain TeX):
 
 ```$ pdfcsplain labyrint.tex```
 
 Hotovo!
+
+
+## Verze
+
+Podle tagů v gitu najdeš jednotlivý verze, který byly aplikovaný "v terénu".
