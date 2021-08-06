@@ -15,13 +15,11 @@
 % tabulka použitých písmen
 % n.b.: musí zůstat bez dalších nových řádků a mezer
 \def\lettertable#1#2{\ifcase#1
-\switchletter#2:f,G,c,P,Y, ;\or % 00, ..., 04
-\switchletter#2:q,x,E,A,H, ;\or % ...
-\switchletter#2:U,I,Z,D,s, ;\or % ...
-\switchletter#2:W,m,o,j,R, ;\or % ...
-\switchletter#2:K,l,b,v,T, ;\or % 40, ..., 44
-\switchletter#2:N,n, , , , ;\or % Cíl (50), Kompost (51)
-\switchletter#2:F,g,C,p,y, ;\fi % 60, ..., 64; 2. úroveň startu, aby se lidi ze začátku moc nepotkávali
+\switchletter#2:f,G,c,P, , ;\or % 00, ..., 03
+\switchletter#2:q,x,E,A, , ;\or % ...
+\switchletter#2:W,m,o,j, , ;\or % ...
+\switchletter#2:K,l,b,v, , ;\or % 30, ..., 33
+\switchletter#2:N,e,n, , , ;\fi % Kompost (40), EPO (41), Cíl (42)
 }
 
 % seznam otázek
@@ -32,46 +30,39 @@
 %   sp1/2       .. ID špatných odpovědí
 %   permutace   .. náhodné číslo mezi 0-5
 
-% 51 - kompost
-\question00->10,01,51:3:Jaké je protonové číslo tritia?;1;6;3;%L
-\question01->11,02,51:4:Jak dlouho spí slon?;4 hodiny;2 hodiny;12 hodin;%
-\question02->12,03,51:1:Sloveso nanosit se je:;Dokonavé;Nedokonavé;Obouvidové;%L
-\question03->13,04,51:4:How much miskates in these sentence?;4;2;3;%
-\question04->14,00,51:3:Jaký je RGB kód oranžové?;255, 128, 0;255, 255, 0;128, 255, 0;%
+\question00->10,01,40:3:Ve kterém z následujících sportů se může\-me setkat s pojmem {\questionfontit karfiol}?;Divoká voda;Paragliding;Volejbal;%
+\question01->11,02,40:4:Ve kterém z následujících sportů se může\-me setkat s pojmem {\questionfontit špicar}?;Lyžování;Cyklistika;Basketbal;%
+\question02->12,03,40:1:Ve kterém z následujících sportů se může\-me setkat s pojmem {\questionfontit vlásenka}?;Lyžování;Paragliding;Lezení;%
+\question03->13,00,40:4:Ve kterém z následujících sportů se může\-me setkat s vyjádřením {\questionfontit na kašpárka}?;Cyklistika;Basketbal;Atletika;%
 
-\question60->10,61,51:3:Jaké je protonové číslo tritia?;1;6;3;%L
-\question61->11,62,51:4:Jak dlouho spí slon?;4 hodiny;2 hodiny;12 hodin;%
-\question62->12,63,51:1:Sloveso nanosit se je:;Dokonavé;Nedokonavé;Obouvidové;%L
-\question63->13,64,51:4:How much miskates in these sentence?;4;2;3;%
-\question64->14,60,51:3:Jaký je RGB kód oranžové?;255, 128, 0;255, 255, 0;128, 255, 0;%
+%~ \setbox1=\vbox{\questionfont\baselineskip=40pt\hbox{Žádný: je to problém hardwaru.}\hbox{~}}
+%~ \setbox2=\vbox{\questionfont\baselineskip=40pt\hbox{Čtyři: jeden má u sebe žárovku,}\hbox{zbylí 3 znají každý část postupu,}\hbox{jak ji našroubovat.}\hbox{~}}
+%~ \setbox3=\vbox{\questionfont\baselineskip=40pt\hbox{Jeden: ale než se to naučí, spotře-}\hbox{buje spoustu dalších žárovek.}\hbox{~}}
+%~ \question11->21,12,14:5:Kolik programátorů je potřeba k výměně žárovky?;{\lower40pt \vbox to\ht1{\box1}};{\lower120pt \vbox to\ht2{\box2}};{\lower80pt \vbox to\ht3{\box3}};%
 
-\question10->20,11,13:5:Jaký byl nejvyšší oficiální denní přírus\-tek případů koronaviru v Německu?;6 933;11 218;3 102;%
-\setbox1=\vbox{\questionfont\baselineskip=40pt\hbox{Žádný: je to problém hardwaru.}\hbox{~}}
-\setbox2=\vbox{\questionfont\baselineskip=40pt\hbox{Čtyři: jeden má u sebe žárovku,}\hbox{zbylí 3 znají každý část postupu,}\hbox{jak ji našroubovat.}\hbox{~}}
-\setbox3=\vbox{\questionfont\baselineskip=40pt\hbox{Jeden: ale než se to naučí, spotře-}\hbox{buje spoustu dalších žárovek.}\hbox{~}}
-\question11->21,12,14:5:Kolik programátorů je potřeba k výměně žárovky?;{\lower40pt \vbox to\ht1{\box1}};{\lower120pt \vbox to\ht2{\box2}};{\lower80pt \vbox to\ht3{\box3}};%
-\question12->22,13,10:5:Jaký je současný rychlostní rekord na windsurfu?;52 uzlů;34 m/s;73 km/h;%
-\question13->23,14,11:1:Kolikátý je letošní ročník ws kurzu na Rujáně?;7.;6.;5.;%L
-\question14->24,10,12:2:Jak dlouho trvá nejdelší den ve Wie\-ku?;17:17;16:23;16:48;%
+\question10->20,11,12:5:Ve kterém z následujících sportů se může\-me setkat s pojmem {\questionfontit utahovák}?;Cyklistika;Kanoistika;Plavání;%
+\question11->21,12,13:5:Ve kterém z následujících sportů se může\-me setkat s pojmem {\questionfontit žába}?;Lezení;Volejbal;Gymnastika;%
+\question12->22,13,10:1:Ve kterém z následujících sportů se může\-me setkat s pojmem {\questionfontit ploty}?;Atletika;Basketbal;Lezení;%L
+\question13->23,10,11:2:Ve kterém z následujících sportů se může\-me setkat s pojmem {\questionfontit zmrud}?;Lezení;Divoká voda;Paragliding;%
 
-\question20->30,21,23:5:Jaká kyselina je vitamin C?;L-askorbová;D-askorbová;R-askorbová;%
-\question21->31,22,24:1:Siam je starší název pro:;Thajsko;Vietnam;Tchaj-wan;%
-\question22->32,23,20:2:Havárie jaderné elektrárny v Černoby\-lu se stala:;26.\ dubna 1986;1.\ května 1982;23.\ dubna 1985;%L
-\question23->33,24,21:0:Kolik nejvíce koňů lze umístit na ša\-cho\-vni\-ci osm krát osm tak, aby se žád\-ní dva neohrožovali?;32;24;16;%
-\question24->34,20,22:3:Co je to žžonka;Alkoholický nápoj;Blbost;Čečenská prostitutka;%L
+\question20->30,11,12:5:Ve kterém z následujících sportů se může\-me setkat s pojmem {\questionfontit krysa}?;Divoká voda;Plavání;Fotbal;%
+\question21->31,12,13:5:Ve kterém z následujících sportů se může\-me setkat s pojmem {\questionfontit bek}?;Fotbal;Basketbal;Gymnastika;%
+\question22->32,13,10:1:Ve kterém z následujících sportů se může\-me setkat s pojmem {\questionfontit fošna}?;Fotbal;Lyžování;Atletika;%L
+\question23->33,10,11:2:Ve kterém z následujících sportů se může\-me setkat s pojmem {\questionfontit golfák}?;Hokej;Judo;Atletika;%
 
-\question30->40,31,33:3:Jaká je nejvyšší hora Šumavy?;Velký Javor;Plechý;Velký Roklan;%L
-\question31->41,32,34:0:Čím se liší travní flosna od normální?;Je zkosená;Má v sobě otvor;Je z karbonizovaného bambusu;%
-\question32->42,33,30:5:Které z následujících zvířat není o\-brat\-lo\-vec?;Rak;Chřestýš;Žralok;%L
-\question33->43,34,31:2:Jaký akord je tvořen tóny D, F, A a C?;Dmi7;A4;Amaj7;%L
-\question34->44,30,32:4:Kolik dětí měl Johann Sebastian Bach?;20;0;11;%
+\question30->41,11,12:5:Ve kterém z následujících sportů se může\-me setkat s pojmem {\questionfontit sako}?;Volejbal;Divoká voda;Golf;%
+\question31->41,12,13:5:Ve kterém z následujících sportů se může\-me setkat s pojmem {\questionfontit eprouč}?;Golf;Lezení;Judo;%
+\question32->41,13,10:1:Ve kterém z následujících sportů se může\-me setkat s pojmem {\questionfontit markovátko}?;Golf;Lezení;Lyžování;%L
+\question33->41,10,11:2:Ve kterém z následujících sportů se může\-me setkat s pojmem {\questionfontit hák}?;Cyklistika;Lezení;Plavání;%
 
-% 50 - cíl
-\question40->50,41,43:5:Jak jste se dostali k této otázce?;Orgové jsou strašně škodolibí;Jsme lamy;Rádi bloudíme;%
-\question41->50,42,44:2:Mistrovství světa v softbalu se v roce 2019 konalo v Praze a?;Havlíčkově Brodě;Kolíně;Klatovech;%L
-\question42->50,43,40:4:Co se děje při spin-outu?;Za flosnou se drží vzduchová kapsa;Prkno vyskakuje nekontrolovaně z vody;Vylejzá ti zadek z plavek;%
-\question43->50,44,41:1:Kolik poštovních známek "Modrý mauricius" bylo celkově vyrobeno?;500;5 000;50 000;%
-\question44->50,40,42:4:V roce 2010 vybuchla na Islandu sopka, která nadvakrát ochromila leteckou dopravu nad Evropou. Jak se jmenuje stej\-nojmenný ledovec, pod kterým se vul\-kán nachází?;Eyjafjallajökull;Eiríksjökull;Vatnajökull;%L
+\setbox1=\vbox{\questionfont\baselineskip=40pt\hbox{Ekologické řešení zpracování}\hbox{odpadů}\hbox{~}}
+\setbox2=\vbox{\questionfont\baselineskip=40pt\hbox{Nejlepší oddíl pod širým nebem}\hbox{~}}
+\setbox3=\vbox{\questionfont\baselineskip=40pt\hbox{Přehled formulářů pro finanční}\hbox{správu}\hbox{~}}
+
+\question41->42,30,32:2:Která z následujících možností se {\questionfontit neskrý\-vá} pod zkratkou {\questionfontit EPO}?;{\lower80pt \vbox to\ht1{\box1}};{\lower40pt \vbox to\ht2{\box2}};{\lower80pt \vbox to\ht3{\box3}};%
+
+% banán
+
 %
 %   VYPLNIT - KONEC
 % ------------------------------------------------------------------------------
@@ -81,13 +72,13 @@
 % Cíl
 %
 % vrchní písmenko
-\centerline{\topletterfont\lettertable50}
+\centerline{\topletterfont\lettertable42}
 % mezera
 \vskip2cm
 % větší řádkování
-\baselineskip=55pt
+\baselineskip=50pt
 % jste v cíli!
-{\finishfont\hskip1.8cm Gratulujeme! Jste opravdoví drs\-ňá\-ci, protože jste právě došli do cíle. Nebylo to snadné, že? Ví\-těz\-ný pocit si můžete vychutnávat cestou do objektu. Těšíme se na vás!!}
+{\finishfont\hskip1.8cm Gratulujeme! Jste opravdoví drs\-ňá\-ci, protože jste právě došli do cíle. Nebylo to snadné, že? (Ještě doplnit nějaký kecy.)}
 % zápatí
 \footing
 
@@ -96,7 +87,7 @@
 % Kompost
 %
 % vrchní písmenko
-\centerline{\topletterfont\lettertable51}
+\centerline{\topletterfont\lettertable40}
 % mezera
 \vskip2cm
 % alias
@@ -104,9 +95,9 @@
 % mezera
 \vskip2cm
 % větší řádkování
-\baselineskip=55pt
+\baselineskip=50pt
 % jste na kompostě!
-\centerline{\finishfont Recyklujte se zpět na start.}
+{\finishfont\hskip1.8cm  Sportovní pojmy nejsou vaše nej\-sil\-nější stránka. Nevadí, hra\-je\-me přece pro zábavu! Re\-cyk\-luj\-te se zpět na svoje startovní písmenko a dejte tomu ještě jed\-nu šanci.}
 % zápatí
 \footing
 
