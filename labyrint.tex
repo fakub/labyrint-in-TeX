@@ -19,7 +19,7 @@
 \switchletter#2:q,x,E,A, , ;\or % ...
 \switchletter#2:W,m,o,j, , ;\or % ...
 \switchletter#2:K,l,b,v, , ;\or % 30, ..., 33
-\switchletter#2:N,e,n, , , ;\fi % Kompost (40), EPO (41), Cíl (42)
+\switchletter#2:N,e,n,Z, , ;\fi % Kompost (40), EPO (41), Cíl (42)
 }
 
 % seznam otázek
@@ -56,10 +56,10 @@
 \question33->41,10,11:2:Ve kterém z následujících sportů se může\-me setkat s pojmem {\questionfontit hák}?;Cyklistika;Lezení;Plavání;%
 
 \setbox1=\vbox{\questionfont\baselineskip=40pt\hbox{Ekologické řešení zpracování}\hbox{odpadů}\hbox{~}}
-\setbox2=\vbox{\questionfont\baselineskip=40pt\hbox{Nejlepší oddíl pod širým nebem}\hbox{~}}
-\setbox3=\vbox{\questionfont\baselineskip=40pt\hbox{Přehled formulářů pro finanční}\hbox{správu}\hbox{~}}
+\setbox2=\vbox{\questionfont\baselineskip=40pt\hbox{Přehled formulářů pro finanční}\hbox{správu}\hbox{~}}
+\setbox3=\vbox{\questionfont\baselineskip=40pt\hbox{Nejlepší oddíl pod širým nebem}\hbox{~}}
 
-\question41->42,30,32:2:Která z následujících možností se {\questionfontit neskrý\-vá} pod zkratkou {\questionfontit EPO}?;{\lower80pt \vbox to\ht1{\box1}};{\lower40pt \vbox to\ht2{\box2}};{\lower80pt \vbox to\ht3{\box3}};%
+\question41->42,43,30:2:Která z následujících možností se {\questionfontit neskrý\-vá} pod zkratkou {\questionfontit EPO}?;{\lower80pt \vbox to\ht1{\box1}};{\lower80pt \vbox to\ht2{\box2}};{\lower40pt \vbox to\ht3{\box3}};%
 
 % banán
 
@@ -98,6 +98,21 @@
 \baselineskip=40pt
 % jste na kompostě!
 {\questionfont Sportovní pojmy nejsou vaše nej\-sil\-nější stránka. Nevadí, hra\-je\-me přece pro zá\-ba\-vu. Re\-cyk\-luj\-te se zpět na svoje startovní písmenko a dejte tomu ještě jed\-nu šanci!}
+% zápatí
+\footing
+
+
+%
+% Not so bad
+%
+% vrchní písmenko
+\centerline{\topletterfont\lettertable43}
+% mezera
+\vskip2cm
+% větší řádkování
+\baselineskip=40pt
+% jste na kompostě!
+{\questionfont EPO je vskutku zkratka přehledu for\-mu\-lá\-řů pro finanční správu. Vraťte se na předchozí otázku a zkuste to ještě jed\-nou!}
 % zápatí
 \footing
 
