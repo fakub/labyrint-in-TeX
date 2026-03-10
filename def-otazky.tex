@@ -28,14 +28,26 @@
 %~ \font\topletterfont=frummr17 at 250pt   % tohle bylo nějaký runový písmo, už neumim oživit
 
 % otázka
-\font\questionfont=csr17 at 28pt
+\font\questionfont=csr17 at 20pt
+\font\questionmi=cmmi10 at 20pt
+\font\questionsy=cmsy10 at 20pt
+
+\font\scriptmi=cmmi10 at 14pt
+\font\scriptsy=cmsy10 at 14pt
+
+\textfont0=\questionfont
+\textfont1=\questionmi
+\textfont2=\questionsy
+
+\scriptfont1=\scriptmi
+\scriptfont2=\scriptsy
 
 % odpovědní písmenko
 %~ \font\voteletterfont=frummr17 at 22pt   % tohle bylo nějaký runový písmo, už neumim oživit
-\font\voteletterfont=csr17 at 22pt
+\font\voteletterfont=csr17 at 16pt
 
 % poznámka
-\font\notefont=csr17 at 20pt
+\font\notefont=csr17 at 16pt
 
 % cíl
 \font\finishfont=csr17 at 35pt
@@ -57,7 +69,7 @@
 \def\question#1->#2,#3,#4:#5:#6;#7;#8;#9;{
     \permutation#5:\lettertable#2;\lettertable#3;\lettertable#4;#7;#8;#9;
     % větší řádkování
-    \baselineskip=40pt
+    \baselineskip=32pt
     % vrchní písmenko
     \centerline{\topletterfont\lettertable#1}
     % mezera
@@ -68,9 +80,9 @@
     \vskip1cm
     % odpovědi
     {\questionfont
-        \setbox0=\hbox{\voteletterfont\letterX} \line{\hskip1cm \hskip-.5\wd0 \copy0\hskip-.5\wd0\hskip.6cm-- \answerX\hfil}
-        \setbox0=\hbox{\voteletterfont\letterY} \line{\hskip1cm \hskip-.5\wd0 \copy0\hskip-.5\wd0\hskip.6cm-- \answerY\hfil}
-        \setbox0=\hbox{\voteletterfont\letterZ} \line{\hskip1cm \hskip-.5\wd0 \copy0\hskip-.5\wd0\hskip.6cm-- \answerZ\hfil}
+        \setbox0=\hbox{\voteletterfont\letterX} \line{\hskip1cm \hskip-.5\wd0 \copy0\hskip-.5\wd0\hskip.6cm--\hskip.8cm \answerX\hfil}
+        \setbox0=\hbox{\voteletterfont\letterY} \line{\hskip1cm \hskip-.5\wd0 \copy0\hskip-.5\wd0\hskip.6cm--\hskip.8cm \answerY\hfil}
+        \setbox0=\hbox{\voteletterfont\letterZ} \line{\hskip1cm \hskip-.5\wd0 \copy0\hskip-.5\wd0\hskip.6cm--\hskip.8cm \answerZ\hfil}
     }
     % zápatí
     \footing
