@@ -63,7 +63,10 @@
 
 % takhle si žijeme:
 \question20->31,21,23:5:U které domácí činnosti se zvládneme nejvíce pohádat?;Kubík se nehádá;Spouštění pračky;Mytí záchodu;%
-\question21->32,22,24:1:Na kterém romantickém rande jsme zatím nebyli?;Animovaný film o utlačování náboženské menšiny v Číně;Film o Ukrajinských sportovcích za války s komentářem režiséra;Film o dopadu klimatické změny na Kongžské pralesy s panelovou diskuzí;%
+    \setbox1=\vbox{\questionfont\baselineskip=32pt\hbox{Animovaný film o utlačování náboženské}\hbox{menšiny v Číně}\hbox{~}}
+    \setbox2=\vbox{\questionfont\baselineskip=32pt\hbox{Film o Ukrajinských sportovcích za války}\hbox{s komentářem režiséra}\hbox{~}}
+    \setbox3=\vbox{\questionfont\baselineskip=32pt\hbox{Film o dopadu klimatické změny na Kongžské}\hbox{pralesy s panelovou diskuzí}\hbox{~}}
+\question21->32,22,24:1:Na kterém romantickém rande jsme zatím nebyli?;{\lower64pt \vbox to\ht1{\box1}};{\lower64pt \vbox to\ht2{\box2}};{\lower64pt \vbox to\ht3{\box3}};%
 \question22->33,23,20:2:XXXXXXXXXXXXXXXX?;A;B;C;%
 \question23->34,24,21:0:XXXXXXXXXXXXXXXX?;A;B;C;%
 \question24->30,20,22:3:XXXXXXXXXXXXXXXX?;A;B;C;%
